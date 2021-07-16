@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.IDEFoundation.TextSubstitutionFileTemplateKind</string>
+	<key>Platforms</key>
+	<array>
+		<string>com.apple.platform.iphoneos</string>
+	</array>
+	<key>SortOrder</key>
+	<integer>40</integer>
+	<key>Description</key>
+	<string>Empty Pod Folder</string>
+	<key>Summary</key>
+	<string>Empty Pod Folder With podspec and info.plist</string>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Description</key>
+			<string>Name of module</string>
+			<key>Default</key>
+			<string>Module</string>
+			<key>Type</key>
+			<string>text</string>
+			<key>Identifier</key>
+			<string>name</string>
+			<key>Name</key>
+			<string>Module Name</string>
+		</dict>
+		<dict>
+			<key>Description</key>
+			<string>Description of module</string>
+			<key>Default</key>
+			<string>Module</string>
+			<key>Type</key>
+			<string>text</string>
+			<key>Identifier</key>
+			<string>description</string>
+			<key>Name</key>
+			<string>Module Description</string>
+		</dict>
+		<dict>
+			<key>Description</key>
+			<string>Author</string>
+			<key>Default</key>
+			<string>author</string>
+			<key>Type</key>
+			<string>text</string>
+			<key>Identifier</key>
+			<string>author_name</string>
+			<key>Name</key>
+			<string>Author</string>
+		</dict>
+		<dict>
+			<key>Description</key>
+			<string>Author&apos;s email</string>
+			<key>Default</key>
+			<string>email@65apps.com</string>
+			<key>Type</key>
+			<string>text</string>
+			<key>Identifier</key>
+			<string>author_email</string>
+			<key>Name</key>
+			<string>Email</string>
+		</dict>
+	</array>
+</dict>
+</plist>

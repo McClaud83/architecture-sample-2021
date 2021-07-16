@@ -1,0 +1,81 @@
+ENV['COCOAPODS_DISABLE_STATS'] = 'true'
+platform :ios, '11.0'
+use_frameworks!
+inhibit_all_warnings!
+
+install! 'cocoapods',
+:deterministic_uuids => false,
+:clean => true,
+:disable_input_output_paths => true,
+:warn_for_unused_master_specs_repo => false
+
+def external_pods
+    use_frameworks!
+    # Rx
+    pod 'RxSwift', '5.1.2'
+    pod 'RxCocoa', '5.1.1'
+    pod 'RxDataSources'
+    pod 'RxSwiftExt', '5.2.0'
+    pod 'RxFeedback', '3.0.0'
+    pod 'RxViewController', '1.0.0'
+end
+
+def core_pods
+    pod "RoutingCore", :path => "./Modules/RoutingCore"
+    pod "Constants", :path => "./Modules/Constants"
+    pod "ErrorTracker", :path => "./Modules/ErrorTracker"
+    pod "DataManagers", :path => "./Modules/DataManagers"
+    pod "Services", :path => "./Modules/Services"
+    pod "Common", :path => "./Modules/Common"
+    pod "Networking", :path => "./Modules/Networking"
+end
+
+def feature_pods
+    pod "Models", :path => "./Modules/Models"
+    pod "UseCases", :path => "./Modules/UseCases"
+    pod "Extensions", :path => "./Modules/Extensions"
+    pod "GoogleSignInManager", :path => "./Modules/GoogleSignInManager"
+end
+
+def scenes_pods
+    pod "ScenesCoordinator", :path => "./Modules/ScenesCoordinator"
+    pod "SceneLoading", :path => "./Modules/SceneLoading"
+    pod "SceneSignIn", :path => "./Modules/SceneSignIn"
+    pod "SceneContacts", :path => "./Modules/SceneContacts"
+end
+
+target 'ArchSample2021' do
+    use_frameworks!
+    inherit! :search_paths
+    external_pods
+  
+    core_pods
+    feature_pods
+    scenes_pods
+end
+
+# не давал включить GoogleSignIn в pod UseCases
+pre_install do |installer|
+  Pod::Installer::Xcode::TargetValidator.send(:define_method, :verify_no_static_framework_transitive_dependencies) {}
+end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            if config.name.include?("Debug")
+                config.build_settings['GCC_OPTIMIZATION_LEVEL'] = '0'
+                config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = '-Onone'
+                config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+                config.build_settings["BITCODE_GENERATION_MODE"] = "marker"
+            end
+            
+            if config.name.include?("Release")
+                config.build_settings["BITCODE_GENERATION_MODE"] = "bitcode"
+            end
+          
+            config.build_settings['CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER'] = 'NO'
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
+            config.build_settings['DEBUG_INFORMATION_FORMAT'] = 'dwarf'
+        end
+    end
+end

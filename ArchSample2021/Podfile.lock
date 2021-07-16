@@ -1,0 +1,234 @@
+PODS:
+  - Alamofire (5.4.1)
+  - AppAuth (1.4.0):
+    - AppAuth/Core (= 1.4.0)
+    - AppAuth/ExternalUserAgent (= 1.4.0)
+  - AppAuth/Core (1.4.0)
+  - AppAuth/ExternalUserAgent (1.4.0)
+  - Common (0.0.1):
+    - Differentiator
+    - RxCocoa
+    - RxDataSources
+    - RxSwift
+  - Constants (0.0.1)
+  - DataManagers (0.0.1):
+    - Constants
+    - GoogleSignInManager
+    - Models
+    - Networking
+    - RxSwift
+  - Differentiator (4.0.1)
+  - ErrorTracker (0.0.1):
+    - Extensions
+    - RxCocoa
+    - RxSwift
+  - Extensions (0.0.1):
+    - Common
+    - RxCocoa
+    - RxSwift
+  - GoogleSignInManager (0.0.1):
+    - AppAuth
+    - Constants
+    - GTMAppAuth
+    - GTMSessionFetcher/Core
+    - Models
+    - RxSwift
+  - GTMAppAuth (1.1.0):
+    - AppAuth/Core (~> 1.4)
+    - GTMSessionFetcher (~> 1.4)
+  - GTMSessionFetcher (1.5.0):
+    - GTMSessionFetcher/Full (= 1.5.0)
+  - GTMSessionFetcher/Core (1.5.0)
+  - GTMSessionFetcher/Full (1.5.0):
+    - GTMSessionFetcher/Core (= 1.5.0)
+  - Models (0.0.1)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (14.0.0):
+    - Moya/Core
+    - RxSwift (~> 5.0)
+  - Networking (0.0.1):
+    - Constants
+    - Models
+    - Moya/RxSwift (= 14.0.0)
+    - RxSwift
+  - RoutingCore (0.0.1):
+    - Constants
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxFeedback (3.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxOptional (4.1.0):
+    - RxCocoa (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.2)
+  - RxSwiftExt (5.2.0):
+    - RxSwiftExt/Core (= 5.2.0)
+    - RxSwiftExt/RxCocoa (= 5.2.0)
+  - RxSwiftExt/Core (5.2.0):
+    - RxSwift (~> 5.0)
+  - RxSwiftExt/RxCocoa (5.2.0):
+    - RxCocoa (~> 5.0)
+    - RxSwiftExt/Core
+  - RxSwiftExtensions (1.2.2):
+    - RxCocoa (>= 4.3)
+    - RxOptional (>= 3.5)
+    - RxSwift (>= 4.3)
+    - RxViewController
+  - RxViewController (1.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - SceneContacts (0.0.1):
+    - Common
+    - Extensions
+    - RoutingCore
+    - RxDataSources
+    - RxSwift
+    - RxSwiftExtensions
+    - RxViewController
+    - UseCases
+  - SceneLoading (0.0.1):
+    - Extensions
+    - RoutingCore
+    - RxSwift
+    - RxViewController
+    - UseCases
+  - ScenesCoordinator (0.0.1):
+    - SceneContacts
+    - SceneLoading
+    - SceneSignIn
+  - SceneSignIn (0.0.1):
+    - Extensions
+    - RoutingCore
+    - RxSwift
+    - RxSwiftExtensions
+    - RxViewController
+    - UseCases
+  - Services (0.0.1):
+    - DataManagers
+    - ErrorTracker
+    - Extensions
+    - Models
+    - RxSwift
+  - UseCases (0.0.1):
+    - Models
+    - RxFeedback
+    - RxSwift
+    - Services
+
+DEPENDENCIES:
+  - Common (from `./Modules/Common`)
+  - Constants (from `./Modules/Constants`)
+  - DataManagers (from `./Modules/DataManagers`)
+  - ErrorTracker (from `./Modules/ErrorTracker`)
+  - Extensions (from `./Modules/Extensions`)
+  - GoogleSignInManager (from `./Modules/GoogleSignInManager`)
+  - Models (from `./Modules/Models`)
+  - Networking (from `./Modules/Networking`)
+  - RoutingCore (from `./Modules/RoutingCore`)
+  - RxCocoa (= 5.1.1)
+  - RxDataSources
+  - RxFeedback (= 3.0.0)
+  - RxSwift (= 5.1.2)
+  - RxSwiftExt (= 5.2.0)
+  - RxViewController (= 1.0.0)
+  - SceneContacts (from `./Modules/SceneContacts`)
+  - SceneLoading (from `./Modules/SceneLoading`)
+  - ScenesCoordinator (from `./Modules/ScenesCoordinator`)
+  - SceneSignIn (from `./Modules/SceneSignIn`)
+  - Services (from `./Modules/Services`)
+  - UseCases (from `./Modules/UseCases`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AppAuth
+    - Differentiator
+    - GTMAppAuth
+    - GTMSessionFetcher
+    - Moya
+    - RxCocoa
+    - RxDataSources
+    - RxFeedback
+    - RxOptional
+    - RxRelay
+    - RxSwift
+    - RxSwiftExt
+    - RxSwiftExtensions
+    - RxViewController
+
+EXTERNAL SOURCES:
+  Common:
+    :path: "./Modules/Common"
+  Constants:
+    :path: "./Modules/Constants"
+  DataManagers:
+    :path: "./Modules/DataManagers"
+  ErrorTracker:
+    :path: "./Modules/ErrorTracker"
+  Extensions:
+    :path: "./Modules/Extensions"
+  GoogleSignInManager:
+    :path: "./Modules/GoogleSignInManager"
+  Models:
+    :path: "./Modules/Models"
+  Networking:
+    :path: "./Modules/Networking"
+  RoutingCore:
+    :path: "./Modules/RoutingCore"
+  SceneContacts:
+    :path: "./Modules/SceneContacts"
+  SceneLoading:
+    :path: "./Modules/SceneLoading"
+  ScenesCoordinator:
+    :path: "./Modules/ScenesCoordinator"
+  SceneSignIn:
+    :path: "./Modules/SceneSignIn"
+  Services:
+    :path: "./Modules/Services"
+  UseCases:
+    :path: "./Modules/UseCases"
+
+SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
+  Common: 312371475513287325ab2ce411170c3007f5c102
+  Constants: f13662b17e53fd978c900160cc8ed79727852495
+  DataManagers: db70c35cbc044541c49f55d80ea0e2b5148ade19
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  ErrorTracker: e4ba678cb6a7697d842bc74531c4dfce8bb5db0b
+  Extensions: 168b8c3fd227eafb0838c8eff1aa97dc24131855
+  GoogleSignInManager: b3f9ce14f32d5f6e783735285182a55940a400db
+  GTMAppAuth: 197a8dabfea5d665224aa00d17f164fc2248dab9
+  GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
+  Models: 0b60a7697d2968b5a1976b9254980f6b9f95fcf6
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  Networking: 90cc1a0642d4745fce63119acab7dc7306728ff3
+  RoutingCore: 915837ce894b0a0f9508209e5e2ef18fcb37f47f
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
+  RxFeedback: 4260d8dad5bba28b182c0b9ff5bce68c260de183
+  RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 1e2e1f9570186967f617e49128ed26ccf1bafc8e
+  RxSwiftExt: 4ca80336f43c28f11a2825cdd2fc61dd6c044697
+  RxSwiftExtensions: 55a489fc6b46a047646438b948a3ad65d9e4e63a
+  RxViewController: 7330a46e5c31cd680db169da4c9fc8676e975a81
+  SceneContacts: 2f881797dc377b6baced07c4292c67fead0e02c7
+  SceneLoading: 1c5e331ef33277d4f40c5872f287f6d6752839f8
+  ScenesCoordinator: fc29b3c0b4be77977a101c846d043962fd5a90ff
+  SceneSignIn: 4ab962fae38cb861f1e3712e7e2a38b917ab0b37
+  Services: 0e1b70c913369d72e4330bdd00d95d87ef7dca02
+  UseCases: 8f32d4daf119195c74866641e3e1d3ab5132b774
+
+PODFILE CHECKSUM: d0ed463ffdf7c49be40871e8afc0ebebc0eb693f
+
+COCOAPODS: 1.10.1
